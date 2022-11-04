@@ -19,25 +19,18 @@ ext {
 }
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-actuator')
-    implementation('org.springframework.cloud:spring-cloud-starter-config')
-    implementation('org.springframework.cloud:spring-cloud-starter-eureka')
-    implementation('org.springframework.cloud:spring-cloud-starter-feign')
-    implementation('org.springframework.cloud:spring-cloud-starter-ribbon')
-    implementation('org.springframework.cloud:spring-cloud-starter-zuul')
-
-//    implementation 'org.springframework.boot:spring-boot-starter-web'
-//    implementation 'org.springframework.boot:spring-boot-starter-actuator'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-server'
-////    implementation 'spring-cloud-starter-netflix-eureka-client:2.2.6.RELEASE'
-//    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.10.RELEASE'
-//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.1.4.RELEASE'
-////    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.3.0.RELEASE'
-////    implementation 'org.springframework.cloud:spring-cloud-starter-zuul:1.4.7.RELEASE'
-//    implementation("org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.1.2.RELEASE")
-//    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
+    implementation 'spring-cloud-starter-netflix-eureka-client:2.2.6.RELEASE'
+    implementation "org.springframework.cloud:spring-cloud-starter-openfeign"
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.10.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.1.4.RELEASE'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-ribbon:2.3.0.RELEASE'
+//    implementation 'org.springframework.cloud:spring-cloud-starter-zuul:1.4.7.RELEASE'
+    implementation("org.springframework.cloud:spring-cloud-starter-netflix-zuul:2.1.2.RELEASE")
+    implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
