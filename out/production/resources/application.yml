@@ -2,8 +2,8 @@ server:
   port: 9090
 
 spring:
-  config:
-    import: "optional:configserver:http://localhost:8888"
+#  config:
+#    import: "optional:configserver"
 
   application:
     name: dataIn-zuul-server
@@ -24,25 +24,29 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:9091/eureka/
     registerWithEureka: true
-#    fetch-registry: true
+    fetch-registry: true
 
 #Zuul Routing
 zuul:
   routes:
     survey: #routing id
       path: /dataInSurvey/** #zuul context root
+      url: http://localhost:8084
       serviceId: dataIn-survey #spring application name
 
     satisfaction:
       path: /dataInSatisfaction/**
+      url: http://localhost:8083
       serviceId: dataIn-satisfaction
 
     multiFacetedEvaluation:
       path: /dataInmultiFacetedEvaluation/**
+      url: http://localhost:8082
       serviceId: dataIn-multi-faceted-evaluation
 
     ahp:
       path: /dataInAhp/**
+      url: http://localhost:8081
       serviceId: dataIn-ahp
 
     main:
