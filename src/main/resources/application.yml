@@ -1,0 +1,51 @@
+server:
+  port: 9090
+
+spring:
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+  application:
+    name: dataIn-zuul-server
+  main:
+    allow-circular-references: true
+
+
+  #Config Server
+  cloud:
+    config:
+      uri: http://localhost:8888
+      name: dataIn-config-server
+
+
+#Eureka Client
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:9091/eureka/
+    registerWithEureka: true
+    fetch-registry: true
+
+#Zuul Routing
+zuul:
+  routes:
+    survey: #routing id
+      path: /dataInSurvey/** #zuul context root
+      serviceId: dataIn-survey #spring application name
+
+    satisfaction:
+      path: /dataInSatisfaction/**
+      serviceId: dataIn-satisfaction
+
+    multiFacetedEvaluation:
+      path: /dataInmultiFacetedEvaluation/**
+      serviceId: dataIn-multi-faceted-evaluation
+
+    ahp:
+      path: /dataInAhp/**
+      serviceId: dataIn-ahp
+
+    main:
+      path: /main/**
+      url: http://localhost:8080
+      sevicedID: dataIn-main
